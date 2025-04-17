@@ -1,0 +1,26 @@
+<view class="container">
+  <!-- 顶部Banner -->
+  <view class="banner">
+    <swiper autoplay circular>
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 热门赛事 -->
+  <view class="battles">
+    <view class="section-title">热门Battle赛事</view>
+    <view class="battle-list">
+      <view class="battle-card" wx:for="{{battleCards}}" wx:key="index" bindtap="onBattleClick" data-index="{{index}}">
+        <image class="card-image" src="{{item.image}}" mode="aspectFill"></image>
+        <view class="card-content">
+          <text class="card-title">{{item.title}}</text>
+          <text class="card-subtitle">{{item.subtitle}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  
+</view>
