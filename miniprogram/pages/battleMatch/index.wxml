@@ -1,0 +1,46 @@
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <input class="search-input" placeholder="搜索选手" bindinput="onSearchInput" value="{{searchKeyword}}" />
+  </view>
+
+  <!-- 选手列表区域 -->
+  <scroll-view class="dancers-grid" scroll-y>
+    <view class="grid-container">
+      <view class="dancer-item {{selectedDancer === item.id ? 'selected' : ''}} {{item.disabled ? 'disabled' : ''}}" wx:for="{{displayDancers}}" wx:key="id" bindtap="selectDancer" data-id="{{item.id}}">
+        <view class="avatar-wrapper">
+          <image class="avatar" src="{{item.avatar}}" mode="aspectFill" />
+          <view class="add-icon" wx:if="{{!item.disabled}}">+</view>
+        </view>
+        <text class="name">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 对阵区域 -->
+  <view class="battle-area">
+    <view class="battle-players">
+      <!-- 左侧自己 -->
+      <view class="player self">
+        <image class="battle-avatar" src="{{currentUser.avatar}}" mode="aspectFill" />
+        <text class="battle-name">{{currentUser.name}}</text>
+      </view>
+      <text class="vs">VS</text>
+      <!-- 右侧对手 -->
+      <view class="player opponent">
+        <block wx:if="{{showDefaultAvatar}}">
+          <view class="default-avatar">
+            <text class="question-mark">?</text>
+          </view>
+          <text class="battle-name">等待选择</text>
+        </block>
+        <block wx:else>
+          <image bindtap="cancelSelect" class="battle-avatar" src="{{selectedDancerInfo.avatar}}" mode="aspectFill" />
+          <text class="battle-name">{{selectedDancerInfo.name}}</text>
+        </block>
+      </view>
+    </view>
+
+    <button class="submit-btn" bindtap="onSubmitBattle" disabled="{{!selectedDancer}}">let's battle!</button>
+  </view>
+</view>

@@ -1,1 +1,179 @@
-/* pages/profile/index.wxss */
+.my-profile-container {
+  margin-top:50px;
+  min-height: 100vh;
+  background:#eeb711;
+  // background: linear-gradient(180deg, #eeb711 0%, #eeb711 30%, #eeb711 50%, #ffffff 90%);
+  padding: 44px 30rpx 30rpx;
+  color: #333;
+}
+
+// 基本信息模块
+.basic-info {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+
+  .avatar-section {
+    position: relative;
+    margin-right: 30rpx;
+
+    .avatar {
+      width: 160rpx;
+      height: 160rpx;
+      border-radius: 50%;
+    }
+
+    .edit-icon {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 48rpx;
+      height: 48rpx;
+      background: #eeb711;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 28rpx;
+    }
+  }
+
+  .info-content {
+    flex: 1;
+
+    .nickname {
+      font-size: 36rpx;
+      font-weight: bold;
+      margin-bottom: 10rpx;
+    }
+
+    .dance-years {
+      font-size: 28rpx;
+      color: #666666;
+    }
+  }
+}
+
+// 报名信息模块
+.registration-info {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+
+  .section-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+  }
+
+  .event-list {
+    .event-item {
+      display: flex;
+      padding: 20rpx 0;
+      border-bottom: 1rpx solid #f0f0f0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .event-image {
+        width: 180rpx;
+        height: 180rpx;
+        border-radius: 10rpx;
+        margin-right: 20rpx;
+      }
+
+      .event-content {
+        flex: 1;
+
+        .event-name {
+          font-size: 30rpx;
+          font-weight: bold;
+          margin-bottom: 10rpx;
+        }
+
+        .event-date {
+          font-size: 26rpx;
+          color: #666666;
+          margin-bottom: 10rpx;
+        }
+
+        .event-status {
+          font-size: 24rpx;
+          color: #999999;
+
+          &.ongoing {
+            color: #eeb711;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 对阵信息模块
+.battle-info {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+
+  .section-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+  }
+
+  .battle-list {
+    .battle-item {
+      padding: 20rpx 0;
+      border-bottom: 1rpx solid #f0f0f0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .battle-players {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20rpx;
+        gap: 40rpx;
+
+        .player {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 200rpx;  // 固定宽度
+
+          .player-avatar {
+            width: 120rpx;
+            height: 120rpx;
+            border-radius: 50%;
+            margin-bottom: 16rpx;
+          }
+
+          .player-name {
+            font-size: 28rpx;
+          }
+        }
+
+        .vs {
+          font-size: 40rpx;
+          font-weight: bold;
+          color: #999999;
+        }
+      }
+
+      .battle-status {
+        text-align: center;
+        font-size: 26rpx;
+        color: #666666;
+      }
+    }
+  }
+}

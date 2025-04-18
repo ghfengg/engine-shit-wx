@@ -1,11 +1,66 @@
 .container {
-  background: linear-gradient(180deg, #eeb711 0%, #eeb711 10%, #ffffff 16%);
+  margin-top: 44px;
+  background: linear-gradient(180deg, #eeb711 0%, #eeb711 18%, #ffffff 50%);
   min-height: 100vh;
 }
 
 .banner {
   height: 400rpx;
   margin: 10px;
+
+  .banner-content {
+    position: absolute;
+    left: 20rpx;
+    bottom: 100rpx;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 500rpx;
+      //background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+      z-index: -1;
+    }
+
+    .banner-title {
+      display: block;
+      font-size: 48rpx;
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 20rpx;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner-subtitle {
+      display: block;
+      font-size: 32rpx;
+      color: #ffffff;
+      margin-bottom: 40rpx;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .join-btn {
+      width: 200rpx;
+      height: 80rpx;
+      background: #eeb711;
+      color: #000000;
+      font-size: 28rpx;
+      font-weight: bold;
+      border-radius: 40rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      padding: 0;
+
+      &::after {
+        border: none;
+      }
+    }
+  }
 
   swiper {
     height: 400rpx;
@@ -56,6 +111,122 @@
 .section-header .more {
   color: #666666;
   font-size: 24rpx;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+
+  .title-dot {
+    width: 8rpx;
+    height: 32rpx;
+    background: #FF6B00;
+    margin-right: 16rpx;
+    border-radius: 4rpx;
+    display: inline-block; // 添加这行确保点显示
+  }
+
+  text {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+// 战略合作
+.partners {
+  padding: 20rpx 30rpx; // 增加左右内边距
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 改为两列
+    gap: 30rpx; // 增加间距
+
+
+    .partner-item {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border-radius: 16rpx;
+      padding: 20rpx; // 增加内边距
+      box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+
+      .partner-logo {
+        width: 100rpx; // 增大logo尺寸
+        height: 120rpx;
+        margin-right: 24rpx; // 增加右边距
+      }
+
+      .partner-info {
+        flex: 1;
+        color: #333;
+        flex-direction: column; // 改为纵向排列
+
+        .partner-name {
+          font-size: 30rpx;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 8rpx;
+          white-space: nowrap; // 防止名称换行
+        }
+
+        .partner-desc {
+          font-size: 26rpx;
+          color: #666;
+          white-space: nowrap; // 防止描述换行
+        }
+      }
+    }
+  }
+}
+
+// 热门赛事
+.hot-events {
+  padding: 30rpx;
+
+  .section-title {
+    font-size: 36rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+  }
+
+  .events-scroll {
+    width: 100%;
+    height: 500rpx; // 调整固定高度
+    white-space: nowrap;
+
+    .event-card {
+      display: inline-block; // 改用 inline-block
+      width: 85%; // 调整卡片宽度为容器的85%
+      margin-right: 20rpx;
+      border-radius: 20rpx;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+
+      .event-image {
+        width: 100%;
+        height: 360rpx; // 调整图片高度
+      }
+
+      .event-info {
+        padding: 20rpx;
+
+        .event-name {
+          font-size: 32rpx;
+          font-weight: bold;
+          color: #333;
+          margin-bottom: 8rpx;
+        }
+
+        .event-desc {
+          font-size: 26rpx;
+          color: #666;
+        }
+      }
+    }
+  }
 }
 
 .battles {

@@ -1,0 +1,210 @@
+.container {
+  margin-top:80px;
+  min-height: 100vh;
+  background: #eeb711;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+// 搜索
+.search-box {
+  position: relative;
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+
+  .search-input {
+    width: 100%;
+    height: 80rpx;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 40rpx;
+    padding-left: 20px;
+    font-size: 28rpx;
+    margin-left:-10px;
+    color: #fff;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 40rpx;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32rpx;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+// 选手列表区域
+.dancers-grid {
+  height: 600rpx;
+  background: #FFF;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  width: 710rpx; // 设置固定宽度
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 10rpx;
+  gap: 2px;
+}
+
+.dancer-item {
+  text-align: center;
+
+  .avatar-wrapper {
+    position: relative;
+    width: 80rpx;
+    height: 80rpx;
+    margin: 0 auto 10rpx;
+    border: 3rpx solid transparent;
+    border-radius: 50%;
+    overflow: hidden;
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .add-icon {
+      position: absolute;
+      right: 5rpx;
+      top: 5rpx;
+      width: 32rpx;
+      height: 32rpx;
+      background: #000000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 24rpx;
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  .name {
+    font-size: 26rpx;
+    color: #333333;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.selected {
+    .avatar-wrapper {
+      border-color: #ff4d4f;
+      box-shadow: 0 0 10rpx rgba(255, 77, 79, 0.3);
+
+      &::after {
+        background: rgba(255, 77, 79, 0.3);
+      }
+    }
+  }
+
+  &.disabled {
+    .avatar-wrapper {
+      &::after {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .add-icon {
+      display: none;
+    }
+  }
+}
+
+// 对阵区域
+.battle-area {
+  height: auto;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-top: 30px;
+  margin-bottom: 30rpx;
+
+  .battle-players {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20rpx;
+    gap: 40rpx; // 增加间距
+
+    .player {
+      flex: 0 0 140rpx; // 固定宽度
+      text-align: center;
+
+      .default-avatar {
+        width: 240rpx;
+        height: 240rpx;
+        border-radius: 50%;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10rpx;
+
+        .question-mark {
+          font-size: 48rpx;
+          color: #999999;
+          font-weight: bold;
+        }
+      }
+
+      .battle-avatar {
+        width: 240rpx;
+        height: 240rpx;
+        border-radius: 50%;
+        margin-bottom: 10rpx;
+      }
+
+      .battle-name {
+        font-size: 26rpx;
+        color: #333333;
+      }
+    }
+
+    .vs {
+      font-size: 60rpx; // 增大字号
+      font-weight: bold;
+      color: #333333;
+      flex: none; // 防止被压缩
+    }
+  }
+}
+
+// 提交按钮
+.submit-btn {
+  width: 100%;
+  height: 88rpx;
+  background: #000000;
+  color: #ffffff;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+
+  &:active {
+    opacity: 0.8;
+  }
+}

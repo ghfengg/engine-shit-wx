@@ -1,0 +1,111 @@
+.judge-container {
+  margin-top: 60px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eeb711 0%, #d3b55b 30%, #d3b55b 50%, #ffffff 80%);
+  padding: 40rpx;
+}
+
+.battle-area {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dancers-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60rpx;
+}
+
+.dancer-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30rpx;
+  padding: 40rpx;
+  border-radius: 20rpx;
+
+  &.red {
+    background: #ff4d4f;
+    margin-right: 10rpx;
+  }
+
+  &.blue {
+    background: #1890ff;
+    margin-left: 10rpx;
+  }
+
+  .dancer-avatar {
+    width: 240rpx;
+    height: 240rpx;
+    border-radius: 50%;
+    border: 6rpx solid #ffffff;
+    margin-bottom: 30rpx;
+  }
+
+  .dancer-name {
+    color: #ffffff;
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+  }
+
+  .dancer-score {
+    color: #ffffff;
+    font-size: 54rpx;
+    font-weight: bold;
+  }
+}
+
+.score-slider {
+  padding: 40rpx 0;
+  margin-bottom: 30rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+
+  slider {
+    margin: 30rpx 0;
+    height: 24rpx !important; // 增加高度使轨道更粗
+  }
+
+  .quality-title {
+    color: #ffffff;
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30rpx;
+    display: block;
+  }
+
+  .slider-container {
+    padding: 0 20rpx;
+    margin-bottom: 30rpx;
+  }
+
+  .score-display {
+    text-align: center;
+    color: #ffffff;
+    font-size: 32rpx;
+    font-weight: bold;
+  }
+}
+
+.vote-btn {
+  width: 100%;
+  // height: 88rpx;
+  background: #eeb711;
+  color: #000000;
+  font-size: 36rpx;
+  font-weight: bold;
+  border-radius: 44rpx;
+  margin-top: auto; // 改用固定的上边距
+  margin-bottom: 300rpx; // 添加底部边距
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    opacity: 0.8;
+  }
+}

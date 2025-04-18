@@ -1,0 +1,48 @@
+<custom-navigation-bar></custom-navigation-bar>
+
+<view class="judge-container">
+  <!-- 对战区域 -->
+  <view class="battle-area">
+    <!-- 选手展示区 -->
+    <view class="dancers-row">
+      <!-- 红方选手 -->
+      <view class="dancer-section red">
+        <image class="dancer-avatar" src="{{player1.avatar}}" mode="aspectFill"></image>
+        <text class="dancer-name">{{player1.name}}</text>
+        <text class="dancer-score">{{balance}}%</text>
+      </view>
+
+      <!-- 蓝方选手 -->
+      <view class="dancer-section blue">
+        <image class="dancer-avatar" src="{{player2.avatar}}" mode="aspectFill"></image>
+        <text class="dancer-name">{{player2.name}}</text>
+        <text class="dancer-score">{{100 - balance}}%</text>
+      </view>
+    </view>
+
+    <!-- 评分滑块 -->
+    <view class="score-slider">
+      <text class="quality-title">Sliding Decision Score</text>
+      <view class="slider-container">
+        <slider 
+          value="{{balance}}" 
+          min="0" 
+          max="100" 
+          step="10" 
+          block-size="40"
+          block-color="#ffffff"
+          activeColor="#ff4d4f"
+          backgroundColor="#1890ff"
+          stroke-width="12"
+          bindchange="onBalanceChange"
+        />
+      </view>
+      <view class="score-display">
+        <text>{{balance}}% VS {{100 - balance}}%</text>
+      </view>
+    </view>
+
+    <!-- 投票按钮 -->
+    <button class="vote-btn" bindtap="onVote">VOTE</button>
+  </view>
+</view>

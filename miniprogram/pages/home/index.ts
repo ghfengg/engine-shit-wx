@@ -7,8 +7,46 @@ interface BattleCard {
 Page({
   data: {
     banners: [
-      { id: 1, image: '/assets/banner/banner-1.jpeg' },
-      { id: 2, image: '/assets/banner/banner-2.jpeg' }
+      {
+        id: 2,
+        image: '/assets/banner/banner-2.jpeg',
+        title: 'Immerse in the World of Dance Battles!',
+        subtitle: 'Join the Dance Community'
+      }
+    ],
+    partners: [
+      {
+        id: 'partner_001',
+        name: '杭州·电胶囊',
+        description: '街舞Studio',
+        logo: '/assets/logo/studio-logo.jpg'
+      },
+      {
+        id: 'partner_002',
+        name: '漳州·舞法S',
+        description: '街舞Studio',
+        logo: '/assets/logo/studio-logo.jpg'
+      }
+    ],
+    hotEvents: [
+      {
+        id: 'event_001',
+        name: 'Engine Shit VOL.7.0',
+        description: 'Meet the Crew Members',
+        image: '/assets/battle/battle1.jpeg'
+      },
+      {
+        id: 'event_002',
+        name: 'Engine Shit VOL.8.0',
+        description: 'Dynamic Dance Shows',
+        image: '/assets/battle/battle2.jpeg'
+      },
+      {
+        id: 'event_003',
+        name: 'Engine Shit VOL.8.0',
+        description: 'Dynamic Dance Shows',
+        image: '/assets/battle/battle3.jpeg'
+      },
     ],
     battleCards: [
       {
@@ -25,11 +63,6 @@ Page({
         title: 'Engine Shit VOL.9.0',
         subtitle: 'Music & Dance Fusion',
         image: '/assets/battle/battle3.jpeg'
-      },
-      {
-        title: 'Engine Shit VOL.10.0',
-        subtitle: 'Passion for Street Dance',
-        image: '/assets/battle/battle4.jpeg'
       }
     ] as BattleCard[]
   },

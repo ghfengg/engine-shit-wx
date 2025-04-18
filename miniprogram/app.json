@@ -2,41 +2,37 @@
   "pages": [
     "pages/home/index",
     "pages/community/index",
-    "pages/battle/index",
-    "pages/culture/index",
-    "pages/shop/index",
+    "pages/judgeSystem/index",
+    "pages/battleMatch/index",
     "pages/profile/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#eeb711",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#eeb711"
+    "backgroundColor": "#eeb711",
+    "navigationStyle": "custom"
   },
   "tabBar": {
-    "custom": true,
+    "custom": false,
     "color": "#999999",
     "selectedColor": "#eeb711",
     "backgroundColor": "#000000",
     "list": [
       {
         "pagePath": "pages/home/index",
-        "text": "首页"
+        "text": "擂台"
       },
       {
-        "pagePath": "pages/community/index",
-        "text": "社区"
+        "pagePath": "pages/judgeSystem/index",
+        "text": "裁决"
       },
       {
-        "pagePath": "pages/battle/index",
-        "text": "赛事"
-      },
-      {
-        "pagePath": "pages/culture/index",
-        "text": "文化"
+        "pagePath": "pages/battleMatch/index",
+        "text": "点将"
       },
       {
         "pagePath": "pages/profile/index",
-        "text": "我的"
+        "text": "吾界"
       }
     ]
   },

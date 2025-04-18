@@ -1,16 +1,58 @@
+<custom-navigation-bar></custom-navigation-bar>
 <view class="container">
   <!-- 顶部Banner -->
   <view class="banner">
     <swiper autoplay circular>
       <swiper-item wx:for="{{banners}}" wx:key="id">
         <image src="{{item.image}}" mode="aspectFill"></image>
+        <view class="banner-content">
+          <text class="banner-title">{{item.title}}</text>
+          <text class="banner-subtitle">{{item.subtitle}}</text>
+        </view>
       </swiper-item>
     </swiper>
   </view>
 
-  <!-- 热门赛事 -->
+  <!-- 战略合作 -->
+  <view class="partners">
+    <view class="section-title">
+      <text class="title-dot"></text>
+      <text>Sponser</text>
+    </view>
+    <view class="partners-grid">
+      <view class="partner-item" wx:for="{{partners}}" wx:key="id" bindtap="onPartnerTap" data-id="{{item.id}}">
+        <image class="partner-logo" src="{{item.logo}}" mode="aspectFit" />
+        <view class="partner-info">
+          <text class="partner-name">{{item.name}}</text>
+          <text class="partner-desc">{{item.description}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 热门V1 -->
+  <view class="hot-events">
+    <view class="section-title">
+      <text class="title-dot"></text>
+      <text>热门赛事</text>
+    </view>
+    <scroll-view class="events-scroll" scroll-x enable-flex show-scrollbar="false">
+      <view class="event-card" wx:for="{{hotEvents}}" wx:key="id" bindtap="onEventTap" data-id="{{item.id}}">
+        <image class="event-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="event-info">
+          <view class="event-name">{{item.name}}</view>
+          <view class="event-desc">{{item.description}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 热门V2 -->
   <view class="battles">
-    <view class="section-title">热门Battle赛事</view>
+    <view class="section-title">
+      <text class="title-dot"></text>
+      <text>热门赛事</text>
+    </view>
     <view class="battle-list">
       <view class="battle-card" wx:for="{{battleCards}}" wx:key="index" bindtap="onBattleClick" data-index="{{index}}">
         <image class="card-image" src="{{item.image}}" mode="aspectFill"></image>
@@ -22,5 +64,5 @@
     </view>
   </view>
 
-  
+
 </view>

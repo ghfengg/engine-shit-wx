@@ -1,66 +1,114 @@
-// pages/profile/index.ts
+interface UserInfo {
+  avatar: string;
+  nickname: string;
+  danceYears: number;
+}
+
+interface Event {
+  id: string;
+  name: string;
+  image: string;
+  date: string;
+  status: 'ongoing' | 'completed' | 'upcoming';
+  statusText: string;
+}
+
+interface Player {
+  avatar: string;
+  name: string;
+}
+
+interface Battle {
+  id: string;
+  player1: Player;
+  player2: Player;
+  status: string;
+}
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    userInfo: {
+      avatar: '/assets/player/greenteck.jpg',
+      nickname: 'Green Teck',
+      danceYears: 20
+    } as UserInfo,
 
+    events: [
+      {
+        id: 'event_001',
+        name: '2025街舞大赛',
+        image: '/assets/battle/battle1.jpeg',
+        date: '2025-05-01',
+        status: 'ongoing',
+        statusText: '进行中'
+      },
+      {
+        id: 'event_002',
+        name: '2025中国街舞锦标赛',
+        image: '/assets/battle/battle2.jpeg',
+        date: '2025-07-20',
+        status: 'upcoming',
+        statusText: '即将开始'
+      }
+    ] as Event[],
+
+    battles: [
+      {
+        id: 'battle_001',
+        player1: {
+          avatar: '/assets/player/greenteck.jpg',
+          name: 'Green Teck'
+        },
+        player2: {
+          avatar: '/assets/player/Popping C.jpg',
+          name: 'Popping C'
+        },
+        status: '等待对战'
+      }
+    ] as Battle[]
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad() {
-
+  onEditProfile() {
+    wx.showActionSheet({
+      itemList: ['修改头像', '修改昵称'],
+      success: (res) => {
+        if (res.tapIndex === 0) {
+          this.updateAvatar();
+        } else if (res.tapIndex === 1) {
+          this.updateNickname();
+        }
+      }
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  updateAvatar() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        const tempFilePath = res.tempFilePaths[0];
+        // TODO: 上传头像到服务器
+        this.setData({
+          'userInfo.avatar': tempFilePath
+        });
+      }
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  updateNickname() {
+    wx.showModal({
+      title: '修改昵称',
+      editable: true,
+      placeholderText: '请输入新昵称',
+      success: (res) => {
+        if (res.confirm && res.content) {
+          // TODO: 更新昵称到服务器
+          this.setData({
+            'userInfo.nickname': res.content
+          });
+        }
+      }
+    });
   }
-})
+});

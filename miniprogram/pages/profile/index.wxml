@@ -1,2 +1,51 @@
-<!--pages/profile/index.wxml-->
-<text>pages/profile/index.wxml</text>
+<view class="my-profile-container">
+  <!-- 基本信息模块 -->
+  <view class="basic-info">
+    <view class="avatar-section">
+      <image class="avatar" src="{{userInfo.avatar}}" mode="aspectFill" />
+      <view class="edit-icon" bindtap="onEditProfile">✎</view>
+    </view>
+    <view class="info-content">
+      <view class="nickname">{{userInfo.nickname}}</view>
+      <view class="dance-years">舞龄：{{userInfo.danceYears}}年</view>
+    </view>
+  </view>
+
+  <!-- 报名信息模块 -->
+  <view class="registration-info">
+    <view class="section-title">我已报名</view>
+    <view class="event-list">
+      <view class="event-item" wx:for="{{events}}" wx:key="id">
+        <image class="event-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="event-content">
+          <view class="event-name">{{item.name}}</view>
+          <view class="event-date">{{item.date}}</view>
+          <view class="event-status {{item.status === 'ongoing' ? 'ongoing' : ''}}">
+            {{item.statusText}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 对阵信息模块 -->
+  <view class="battle-info">
+    <view class="section-title">我的对阵</view>
+    <view class="battle-list">
+      <view class="battle-item" wx:for="{{battles}}" wx:key="id">
+        <view class="battle-players">
+          <view class="player">
+            <image class="player-avatar" src="{{item.player1.avatar}}" mode="aspectFill" />
+            <text class="player-name">{{item.player1.name}}</text>
+          </view>
+          <text class="vs">VS</text>
+          <view class="player">
+            <image class="player-avatar" src="{{item.player2.avatar}}" mode="aspectFill" />
+            <text class="player-name">{{item.player2.name}}</text>
+          </view>
+        </view>
+        <view class="battle-status">{{item.status}}</view>
+      </view>
+    </view>
+  </view>
+</view>

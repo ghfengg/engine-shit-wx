@@ -1,0 +1,3 @@
+<view class="navigation-bar">
+  <image class="logo" src="/assets/logo/logo.png" mode="aspectFit"></image>
+</view>
