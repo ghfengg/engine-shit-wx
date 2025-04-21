@@ -68,6 +68,17 @@ Page({
     ] as Battle[]
   },
 
+  onShow() {
+    if (typeof this.getTabBar === 'function') {
+      const tabBar = this.getTabBar();
+      if (tabBar) {
+        tabBar.setData({
+          selected: 4
+        });
+      }
+    }
+  },
+
   onEditProfile() {
     wx.showActionSheet({
       itemList: ['修改头像', '修改昵称'],

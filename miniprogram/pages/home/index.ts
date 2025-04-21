@@ -67,6 +67,14 @@ Page({
     ] as BattleCard[]
   },
 
+  onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0 
+      })
+    }
+  },
+
   onBattleClick(e: WechatMiniprogram.TouchEvent) {
     const index = e.currentTarget.dataset.index;
     const battle = this.data.battleCards[index];

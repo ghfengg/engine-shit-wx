@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/community/index",
     "pages/judgeSystem/index",
+    "pages/publish/index",
     "pages/battleMatch/index",
     "pages/profile/index"
   ],
@@ -13,7 +13,7 @@
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "custom": false,
+    "custom": true,
     "color": "#999999",
     "selectedColor": "#eeb711",
     "backgroundColor": "#000000",

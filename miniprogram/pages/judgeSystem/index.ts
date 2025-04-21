@@ -11,6 +11,17 @@ Page({
     balance: 50
   },
 
+  onShow() {
+    if (typeof this.getTabBar === 'function') {
+      const tabBar = this.getTabBar();
+      if (tabBar) {
+        tabBar.setData({
+          selected: 1
+        });
+      }
+    }
+  },
+
   onBalanceChange(e: WechatMiniprogram.SliderChange) {
     this.setData({
       balance: e.detail.value

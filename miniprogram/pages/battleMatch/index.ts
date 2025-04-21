@@ -25,6 +25,17 @@ Page({
     showDefaultAvatar: true,  // 新增状态控制默认头像显示
   },
 
+  onShow() {
+    if (typeof this.getTabBar === 'function') {
+      const tabBar = this.getTabBar();
+      if (tabBar) {
+        tabBar.setData({
+          selected: 3  // 裁决页面对应索引为1
+        });
+      }
+    }
+  },
+
   onLoad() {
     // 初始化显示数组
     this.setData({
