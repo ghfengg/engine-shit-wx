@@ -1,5 +1,112 @@
-.publish-container{
-  background: linear-gradient(180deg, #eeb711 0%, #d3b55b 30%, #d3b55b 50%, #ffffff 80%);
-  height: auto;
+.container {
   min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 120rpx;
+}
+
+.publish-form {
+  background: #fff;
+  padding: 30rpx;
+
+  .form-item {
+    margin-bottom: 30rpx;
+
+    .label {
+      font-size: 28rpx;
+      color: #333;
+      margin-bottom: 16rpx;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      height: 88rpx;
+      background: #f8f8f8;
+      border-radius: 8rpx;
+      padding: 0 24rpx;
+      font-size: 28rpx;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200rpx;
+      background: #f8f8f8;
+      border-radius: 8rpx;
+      padding: 24rpx;
+      font-size: 28rpx;
+    }
+
+    .picker-content {
+      width: 100%;
+      height: 88rpx;
+      background: #f8f8f8;
+      border-radius: 8rpx;
+      padding: 0 24rpx;
+      font-size: 28rpx;
+      line-height: 88rpx;
+      color: #333;
+    }
+  }
+
+  .poster-upload {
+    .upload-area {
+      width: 100%;
+      height: 400rpx;
+      background: #f8f8f8;
+      border-radius: 8rpx;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      image {
+        width: 100%;
+        height: 100%;
+        border-radius: 8rpx;
+      }
+
+      .upload-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #999;
+
+        .icon-add {
+          font-size: 60rpx;
+          margin-bottom: 16rpx;
+        }
+      }
+    }
+  }
+}
+
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+  background: #fff;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 20rpx;
+
+  button {
+    flex: 1;
+    height: 88rpx;
+    border-radius: 44rpx;
+    font-size: 32rpx;
+    line-height: 88rpx;
+  }
+
+  .preview-btn {
+    background: #fff;
+    color: #eeb711;
+    border: 2rpx solid #eeb711;
+  }
+
+  .submit-btn {
+    background: #eeb711;
+    color: #000000;
+  }
 }

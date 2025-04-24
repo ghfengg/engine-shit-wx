@@ -77,9 +77,10 @@ Page({
 
   onBattleClick(e: WechatMiniprogram.TouchEvent) {
     const index = e.currentTarget.dataset.index;
-    const battle = this.data.battleCards[index];
+    const battleItem = this.data.battleCards[index];
+    
     wx.navigateTo({
-      url: `/pages/battle-detail/index?id=${index}`
+      url: `/pages/battleDetail/index?id=${battleItem.id}`
     });
   }
 });

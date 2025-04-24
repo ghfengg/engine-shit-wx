@@ -1,0 +1,52 @@
+<view class="container">
+  <view class="battle-detail">
+    <!-- 赛事基本信息 -->
+    <view class="battle-info">
+      <image class="battle-image" src="{{battleInfo.image}}" mode="aspectFill"></image>
+      <view class="battle-content">
+        <text class="battle-title">{{battleInfo.title}}</text>
+        <text class="battle-subtitle">{{battleInfo.subtitle}}</text>
+      </view>
+    </view>
+
+    <!-- 赛事详细信息 -->
+    <view class="detail-section">
+      <view class="section-item">
+        <text class="label">赛事赛制</text>
+        <text class="content">{{battleInfo.format}}</text>
+      </view>
+      
+      <view class="section-item">
+        <text class="label">举办时间</text>
+        <text class="content">{{battleInfo.time}}</text>
+      </view>
+      
+      <view class="section-item">
+        <text class="label">举办地点</text>
+        <text class="content">{{battleInfo.location}}</text>
+      </view>
+      
+      <view class="section-item">
+        <text class="label">报名费用</text>
+        <text class="content">¥{{battleInfo.fee}}</text>
+      </view>
+      
+      <!-- 裁判信息 -->
+      <view class="judges-section">
+        <text class="label">裁判阵容</text>
+        <view class="judges-list">
+          <view class="judge-item" wx:for="{{battleInfo.judges}}" wx:key="id">
+            <image class="judge-avatar" src="{{item.avatar}}" mode="aspectFill"></image>
+            <text class="judge-name">{{item.name}}</text>
+            <text class="judge-title">{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 报名按钮 -->
+    <view class="action-bar">
+      <button class="signup-btn" bindtap="onSignup">立即报名</button>
+    </view>
+  </view>
+</view>

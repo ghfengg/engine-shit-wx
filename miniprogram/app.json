@@ -4,7 +4,8 @@
     "pages/judgeSystem/index",
     "pages/publish/index",
     "pages/battleMatch/index",
-    "pages/profile/index"
+    "pages/profile/index",
+    "pages/battleDetail/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#eeb711",
@@ -20,7 +21,7 @@
     "list": [
       {
         "pagePath": "pages/home/index",
-        "text": "擂台"
+        "text": "赛事"
       },
       {
         "pagePath": "pages/judgeSystem/index",
@@ -32,7 +33,7 @@
       },
       {
         "pagePath": "pages/profile/index",
-        "text": "吾界"
+        "text": "用户"
       }
     ]
   },

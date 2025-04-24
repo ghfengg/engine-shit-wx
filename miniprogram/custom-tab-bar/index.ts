@@ -6,7 +6,7 @@ Component({
     list: [
       {
         pagePath: "pages/home/index",
-        text: "活动",
+        text: "赛事",
         iconPath: "/assets/icon/competitions-unselected.png",
         selectedIconPath: "/assets/icon/competitions-selected.png"
       },
@@ -30,7 +30,7 @@ Component({
       },
       {
         pagePath: "pages/profile/index",
-        text: "吾界",
+        text: "用户",
         iconPath: "/assets/icon/profile.png",
         selectedIconPath: "/assets/icon/profile-selected.png"
       }
