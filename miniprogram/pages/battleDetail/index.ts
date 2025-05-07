@@ -19,6 +19,8 @@ interface BattleInfo {
   judges: Judge[];
 }
 
+const { get } = require('../../utils/request')
+
 Page({
   data: {
     battleInfo: {
@@ -31,7 +33,7 @@ Page({
       location: '',
       fee: 0,
       judges: [] as Judge[]  // 指定类型为 Judge 数组
-    } as BattleInfo
+    } as BattleInfo,
   },
 
   onBackTap() {
@@ -43,6 +45,15 @@ Page({
   onLoad(options) {
     const id = options.id;
     this.getBattleDetail(id);
+
+    // get('/test').then(data => {
+    //   this.setData({
+    //     test: data
+    //   })
+    // }).catch(err => {
+    //   console.error('GET 请求失败:', err)
+    // })
+
   },
 
   getBattleDetail(id: string) {
